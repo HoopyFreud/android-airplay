@@ -1,9 +1,0 @@
-/home/hoopyfreud/android-airplay/src-tauri/target/debug/deps/airplay_timing-36a58f4156e79672.d: /home/hoopyfreud/.cargo/git/checkouts/airplay2-rs-f4bd5ca194db3f43/a7f019f/crates/airplay-timing/src/lib.rs /home/hoopyfreud/.cargo/git/checkouts/airplay2-rs-f4bd5ca194db3f43/a7f019f/crates/airplay-timing/src/ntp.rs /home/hoopyfreud/.cargo/git/checkouts/airplay2-rs-f4bd5ca194db3f43/a7f019f/crates/airplay-timing/src/ptp.rs /home/hoopyfreud/.cargo/git/checkouts/airplay2-rs-f4bd5ca194db3f43/a7f019f/crates/airplay-timing/src/clock.rs /home/hoopyfreud/.cargo/git/checkouts/airplay2-rs-f4bd5ca194db3f43/a7f019f/crates/airplay-timing/src/traits.rs
-
-/home/hoopyfreud/android-airplay/src-tauri/target/debug/deps/libairplay_timing-36a58f4156e79672.rmeta: /home/hoopyfreud/.cargo/git/checkouts/airplay2-rs-f4bd5ca194db3f43/a7f019f/crates/airplay-timing/src/lib.rs /home/hoopyfreud/.cargo/git/checkouts/airplay2-rs-f4bd5ca194db3f43/a7f019f/crates/airplay-timing/src/ntp.rs /home/hoopyfreud/.cargo/git/checkouts/airplay2-rs-f4bd5ca194db3f43/a7f019f/crates/airplay-timing/src/ptp.rs /home/hoopyfreud/.cargo/git/checkouts/airplay2-rs-f4bd5ca194db3f43/a7f019f/crates/airplay-timing/src/clock.rs /home/hoopyfreud/.cargo/git/checkouts/airplay2-rs-f4bd5ca194db3f43/a7f019f/crates/airplay-timing/src/traits.rs
-
-/home/hoopyfreud/.cargo/git/checkouts/airplay2-rs-f4bd5ca194db3f43/a7f019f/crates/airplay-timing/src/lib.rs:
-/home/hoopyfreud/.cargo/git/checkouts/airplay2-rs-f4bd5ca194db3f43/a7f019f/crates/airplay-timing/src/ntp.rs:
-/home/hoopyfreud/.cargo/git/checkouts/airplay2-rs-f4bd5ca194db3f43/a7f019f/crates/airplay-timing/src/ptp.rs:
-/home/hoopyfreud/.cargo/git/checkouts/airplay2-rs-f4bd5ca194db3f43/a7f019f/crates/airplay-timing/src/clock.rs:
-/home/hoopyfreud/.cargo/git/checkouts/airplay2-rs-f4bd5ca194db3f43/a7f019f/crates/airplay-timing/src/traits.rs:

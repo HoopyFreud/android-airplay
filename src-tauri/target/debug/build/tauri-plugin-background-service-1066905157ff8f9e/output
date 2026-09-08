@@ -1,6 +1,0 @@
-cargo:rerun-if-changed=permissions
-cargo:PERMISSION_FILES_PATH=/home/hoopyfreud/android-airplay/src-tauri/target/debug/build/tauri-plugin-background-service-1066905157ff8f9e/out/tauri-plugin-background-service-permission-files
-cargo:rerun-if-env-changed=REMOVE_UNUSED_COMMANDS
-cargo:rustc-check-cfg=cfg(mobile)
-cargo:rustc-check-cfg=cfg(desktop)
-cargo:rustc-cfg=desktop
