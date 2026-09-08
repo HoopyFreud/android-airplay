@@ -1,0 +1,10 @@
+/home/hoopyfreud/android-airplay/src-tauri/target/debug/deps/poly1305-e8c868bf2639edc6.d: /home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/poly1305-0.8.0/src/lib.rs /home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/poly1305-0.8.0/src/backend.rs /home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/poly1305-0.8.0/src/backend/avx2.rs /home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/poly1305-0.8.0/src/backend/avx2/helpers.rs /home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/poly1305-0.8.0/src/backend/autodetect.rs /home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/poly1305-0.8.0/src/backend/soft.rs
+
+/home/hoopyfreud/android-airplay/src-tauri/target/debug/deps/libpoly1305-e8c868bf2639edc6.rmeta: /home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/poly1305-0.8.0/src/lib.rs /home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/poly1305-0.8.0/src/backend.rs /home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/poly1305-0.8.0/src/backend/avx2.rs /home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/poly1305-0.8.0/src/backend/avx2/helpers.rs /home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/poly1305-0.8.0/src/backend/autodetect.rs /home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/poly1305-0.8.0/src/backend/soft.rs
+
+/home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/poly1305-0.8.0/src/lib.rs:
+/home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/poly1305-0.8.0/src/backend.rs:
+/home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/poly1305-0.8.0/src/backend/avx2.rs:
+/home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/poly1305-0.8.0/src/backend/avx2/helpers.rs:
+/home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/poly1305-0.8.0/src/backend/autodetect.rs:
+/home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/poly1305-0.8.0/src/backend/soft.rs:

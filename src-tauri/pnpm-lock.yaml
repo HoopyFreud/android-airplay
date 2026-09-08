@@ -1,0 +1,29 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    dependencies:
+      tauri-plugin-background-service:
+        specifier: ^1.0.1
+        version: 1.0.1
+
+packages:
+
+  '@tauri-apps/api@2.11.1':
+    resolution: {integrity: sha512-M2FPuYND2m+wh5hfW9ZpSdxMPdEJovPBWwoHJmwUpysTYNHaOkVFN419m/K0LIgjb/7KU2vBgsUepJWugQCvAA==}
+
+  tauri-plugin-background-service@1.0.1:
+    resolution: {integrity: sha512-mXx0TMgQK6eWT7yiWFTGVlQZrhRkmQC50Kt3ZGShvdTiIhV3lOucXNXQdo6XHICmrvx46CkU+UV6UsgbyfHhzw==}
+
+snapshots:
+
+  '@tauri-apps/api@2.11.1': {}
+
+  tauri-plugin-background-service@1.0.1:
+    dependencies:
+      '@tauri-apps/api': 2.11.1

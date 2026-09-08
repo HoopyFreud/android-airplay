@@ -1,0 +1,12 @@
+/home/hoopyfreud/android-airplay/src-tauri/target/debug/deps/cookie-82654dd4b2ffd93e.d: /home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cookie-0.18.2/src/lib.rs /home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cookie-0.18.2/src/builder.rs /home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cookie-0.18.2/src/parse.rs /home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cookie-0.18.2/src/jar.rs /home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cookie-0.18.2/src/delta.rs /home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cookie-0.18.2/src/same_site.rs /home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cookie-0.18.2/src/expiration.rs /home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cookie-0.18.2/src/prefix.rs
+
+/home/hoopyfreud/android-airplay/src-tauri/target/debug/deps/libcookie-82654dd4b2ffd93e.rmeta: /home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cookie-0.18.2/src/lib.rs /home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cookie-0.18.2/src/builder.rs /home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cookie-0.18.2/src/parse.rs /home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cookie-0.18.2/src/jar.rs /home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cookie-0.18.2/src/delta.rs /home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cookie-0.18.2/src/same_site.rs /home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cookie-0.18.2/src/expiration.rs /home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cookie-0.18.2/src/prefix.rs
+
+/home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cookie-0.18.2/src/lib.rs:
+/home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cookie-0.18.2/src/builder.rs:
+/home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cookie-0.18.2/src/parse.rs:
+/home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cookie-0.18.2/src/jar.rs:
+/home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cookie-0.18.2/src/delta.rs:
+/home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cookie-0.18.2/src/same_site.rs:
+/home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cookie-0.18.2/src/expiration.rs:
+/home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cookie-0.18.2/src/prefix.rs:

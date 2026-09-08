@@ -1,0 +1,14 @@
+/home/hoopyfreud/android-airplay/src-tauri/target/debug/deps/serde-7c12c5c2f7c74200.d: /home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/lib.rs /home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/integer128.rs /home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/private/mod.rs /home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/private/de.rs /home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/private/ser.rs /home/hoopyfreud/android-airplay/src-tauri/target/debug/build/serde-a61bf0ab1f1ac20b/out/private.rs
+
+/home/hoopyfreud/android-airplay/src-tauri/target/debug/deps/libserde-7c12c5c2f7c74200.rlib: /home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/lib.rs /home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/integer128.rs /home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/private/mod.rs /home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/private/de.rs /home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/private/ser.rs /home/hoopyfreud/android-airplay/src-tauri/target/debug/build/serde-a61bf0ab1f1ac20b/out/private.rs
+
+/home/hoopyfreud/android-airplay/src-tauri/target/debug/deps/libserde-7c12c5c2f7c74200.rmeta: /home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/lib.rs /home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/integer128.rs /home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/private/mod.rs /home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/private/de.rs /home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/private/ser.rs /home/hoopyfreud/android-airplay/src-tauri/target/debug/build/serde-a61bf0ab1f1ac20b/out/private.rs
+
+/home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/lib.rs:
+/home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/integer128.rs:
+/home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/private/mod.rs:
+/home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/private/de.rs:
+/home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/private/ser.rs:
+/home/hoopyfreud/android-airplay/src-tauri/target/debug/build/serde-a61bf0ab1f1ac20b/out/private.rs:
+
+# env-dep:OUT_DIR=/home/hoopyfreud/android-airplay/src-tauri/target/debug/build/serde-a61bf0ab1f1ac20b/out

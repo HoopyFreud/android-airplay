@@ -1,0 +1,7 @@
+/home/hoopyfreud/android-airplay/src-tauri/target/debug/deps/crypto_common-9a7d7fc20bd9637f.d: /home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/crypto-common-0.1.7/src/lib.rs
+
+/home/hoopyfreud/android-airplay/src-tauri/target/debug/deps/libcrypto_common-9a7d7fc20bd9637f.rlib: /home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/crypto-common-0.1.7/src/lib.rs
+
+/home/hoopyfreud/android-airplay/src-tauri/target/debug/deps/libcrypto_common-9a7d7fc20bd9637f.rmeta: /home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/crypto-common-0.1.7/src/lib.rs
+
+/home/hoopyfreud/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/crypto-common-0.1.7/src/lib.rs:

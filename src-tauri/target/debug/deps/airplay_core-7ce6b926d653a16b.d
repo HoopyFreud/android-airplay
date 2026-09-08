@@ -1,0 +1,10 @@
+/home/hoopyfreud/android-airplay/src-tauri/target/debug/deps/airplay_core-7ce6b926d653a16b.d: /home/hoopyfreud/.cargo/git/checkouts/airplay2-rs-f4bd5ca194db3f43/a7f019f/crates/airplay-core/src/lib.rs /home/hoopyfreud/.cargo/git/checkouts/airplay2-rs-f4bd5ca194db3f43/a7f019f/crates/airplay-core/src/codec.rs /home/hoopyfreud/.cargo/git/checkouts/airplay2-rs-f4bd5ca194db3f43/a7f019f/crates/airplay-core/src/device.rs /home/hoopyfreud/.cargo/git/checkouts/airplay2-rs-f4bd5ca194db3f43/a7f019f/crates/airplay-core/src/error.rs /home/hoopyfreud/.cargo/git/checkouts/airplay2-rs-f4bd5ca194db3f43/a7f019f/crates/airplay-core/src/features.rs /home/hoopyfreud/.cargo/git/checkouts/airplay2-rs-f4bd5ca194db3f43/a7f019f/crates/airplay-core/src/stream.rs
+
+/home/hoopyfreud/android-airplay/src-tauri/target/debug/deps/libairplay_core-7ce6b926d653a16b.rmeta: /home/hoopyfreud/.cargo/git/checkouts/airplay2-rs-f4bd5ca194db3f43/a7f019f/crates/airplay-core/src/lib.rs /home/hoopyfreud/.cargo/git/checkouts/airplay2-rs-f4bd5ca194db3f43/a7f019f/crates/airplay-core/src/codec.rs /home/hoopyfreud/.cargo/git/checkouts/airplay2-rs-f4bd5ca194db3f43/a7f019f/crates/airplay-core/src/device.rs /home/hoopyfreud/.cargo/git/checkouts/airplay2-rs-f4bd5ca194db3f43/a7f019f/crates/airplay-core/src/error.rs /home/hoopyfreud/.cargo/git/checkouts/airplay2-rs-f4bd5ca194db3f43/a7f019f/crates/airplay-core/src/features.rs /home/hoopyfreud/.cargo/git/checkouts/airplay2-rs-f4bd5ca194db3f43/a7f019f/crates/airplay-core/src/stream.rs
+
+/home/hoopyfreud/.cargo/git/checkouts/airplay2-rs-f4bd5ca194db3f43/a7f019f/crates/airplay-core/src/lib.rs:
+/home/hoopyfreud/.cargo/git/checkouts/airplay2-rs-f4bd5ca194db3f43/a7f019f/crates/airplay-core/src/codec.rs:
+/home/hoopyfreud/.cargo/git/checkouts/airplay2-rs-f4bd5ca194db3f43/a7f019f/crates/airplay-core/src/device.rs:
+/home/hoopyfreud/.cargo/git/checkouts/airplay2-rs-f4bd5ca194db3f43/a7f019f/crates/airplay-core/src/error.rs:
+/home/hoopyfreud/.cargo/git/checkouts/airplay2-rs-f4bd5ca194db3f43/a7f019f/crates/airplay-core/src/features.rs:
+/home/hoopyfreud/.cargo/git/checkouts/airplay2-rs-f4bd5ca194db3f43/a7f019f/crates/airplay-core/src/stream.rs:
