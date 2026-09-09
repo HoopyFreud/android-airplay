@@ -2,7 +2,9 @@
   "$schema": "../gen/schemas/desktop-schema.json",
   "identifier": "default",
   "description": "Capability for the main window",
-  "windows": ["main"],
+  "windows": [
+    "main"
+  ],
   "permissions": [
     "core:default",
     "opener:default",
@@ -10,6 +12,8 @@
     "background-service:allow-stop",
     "background-service:allow-is-running",
     "background-service:allow-get-service-state",
-    "background-service:allow-get-platform-capabilities"
+    "background-service:allow-get-platform-capabilities",
+    "store:default",
+    "http:default"
   ]
 }

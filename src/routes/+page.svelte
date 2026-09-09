@@ -1,4 +1,7 @@
 <script lang="ts">
+  import "../app.css";
+  import { Button } from "$lib/components/ui/button/index.js";
+
   import { invoke } from "@tauri-apps/api/core";
   import {
     startService,
@@ -12,6 +15,65 @@
     normalizeBackgroundServiceError,
   } from 'tauri-plugin-background-service';
 
+  interface Device {
+    device_index: number,
+    device_name: string,
+    device_id: string
+    device_ip: string
+  }
+  
+  interface DeviceListResponse {
+    DeviceList: Device[]
+  }
+  
+  interface DeviceResponse {
+    Device: Device
+  }
+  
+  interface ErrorResponse {
+    Error: string
+  }
+
+  type ClientResponse = DeviceListResponse | DeviceResponse | ErrorResponse
+
+  var device_list: Device[] = $state([])
+
+  var err_msg: string | null = $state(null)
+
+  async function getclients() {
+    try {
+      await invoke<ClientResponse>('get_client_list', { timeout: 5 }).then((reply) => {
+        if ("DeviceList" in reply) {
+          device_list = reply.DeviceList
+          err_msg = null
+        }
+      })
+    }
+    catch (error) {
+      err_msg = JSON.stringify(error as Object)
+    }
+  }
+
+  async function connectClientIndex(index: number) {
+    try {
+      await invoke<ClientResponse>('connect_to_client_index', { index: index }).then((reply) => {
+        if ("DeviceList" in reply) {
+          device_list = reply.DeviceList
+          err_msg = null
+        }
+      })
+    }
+    catch (error) {
+      err_msg = JSON.stringify(error as Object)
+    }
+  }
+
+  async function requestPIN(ip_address:string) {
+		const response = await fetch('http://'+ip_address+'/pair-pin-start', {
+			method: 'POST'
+		});
+	}
+  /*
   // Query platform capabilities (call early to set UI expectations)
   const caps = await getPlatformCapabilities();
   console.log(caps.backgroundExecution);  // 'guaranteed' | 'bestEffort' | 'unsupported'
@@ -57,7 +119,7 @@
   await stopService();
 
   // Clean up listener
-  unlisten();
+  unlisten();*/
 
   let name = $state("");
   let greetMsg = $state("");
@@ -69,146 +131,24 @@
   }
 </script>
 
-<main class="container">
-  <h1>Welcome to Tauri + Svelte</h1>
+<div id="app" class="relative min-h-dvh">
+    <h1>Connect to Airplay</h1>
+      <div class="flex flex-row w-full gap-2 justify-center my-5">
+        <Button type="button" onclick={getclients}>Refresh client list</Button>
+      </div>
 
-  <div class="row">
-    <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo vite" alt="Vite Logo" />
-    </a>
-    <a href="https://tauri.app" target="_blank">
-      <img src="/tauri.svg" class="logo tauri" alt="Tauri Logo" />
-    </a>
-    <a href="https://svelte.dev" target="_blank">
-      <img src="/svelte.svg" class="logo svelte-kit" alt="SvelteKit Logo" />
-    </a>
-  </div>
-  <p>Click on the Tauri, Vite, and SvelteKit logos to learn more.</p>
-
-  <form class="row" onsubmit={greet}>
-    <input id="greet-input" placeholder="Enter a name..." bind:value={name} />
-    <button type="submit">Greet</button>
-  </form>
-  <p>{greetMsg}</p>
-</main>
-
-<style>
-.logo.vite:hover {
-  filter: drop-shadow(0 0 2em #747bff);
-}
-
-.logo.svelte-kit:hover {
-  filter: drop-shadow(0 0 2em #ff3e00);
-}
-
-:root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
-
-  color: #0f0f0f;
-  background-color: #f6f6f6;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
-
-.container {
-  margin: 0;
-  padding-top: 10vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: 0.75s;
-}
-
-.logo.tauri:hover {
-  filter: drop-shadow(0 0 2em #24c8db);
-}
-
-.row {
-  display: flex;
-  justify-content: center;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-
-a:hover {
-  color: #535bf2;
-}
-
-h1 {
-  text-align: center;
-}
-
-input,
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  color: #0f0f0f;
-  background-color: #ffffff;
-  transition: border-color 0.25s;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
-}
-
-button {
-  cursor: pointer;
-}
-
-button:hover {
-  border-color: #396cd8;
-}
-button:active {
-  border-color: #396cd8;
-  background-color: #e8e8e8;
-}
-
-input,
-button {
-  outline: none;
-}
-
-#greet-input {
-  margin-right: 5px;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    color: #f6f6f6;
-    background-color: #2f2f2f;
-  }
-
-  a:hover {
-    color: #24c8db;
-  }
-
-  input,
-  button {
-    color: #ffffff;
-    background-color: #0f0f0f98;
-  }
-  button:active {
-    background-color: #0f0f0f69;
-  }
-}
-
-</style>
+    {#each device_list as device}
+      <div class="flex flex-row w-full gap-3 justify-center my-2">
+        <div>{device.device_index}</div><div>|</div>
+        <div>{device.device_name}</div> <div>|</div>
+        <div>{device.device_id}</div> <div>|</div>
+        <div>{device.device_ip}</div> <div>|</div>
+        <Button type="button" onclick={() => requestPIN(device.device_ip)}>Request PIN</Button> <div>|</div>
+        <Button type="button" onclick={() => connectClientIndex(device.device_index)}>Connect</Button>
+      </div>
+    {/each}
+    
+    {#if err_msg}
+      Error: {err_msg}
+    {/if}
+</div>

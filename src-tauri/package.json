@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@tauri-apps/plugin-http": "~2.6.0",
+    "@tauri-apps/plugin-store": "~2.4.4",
     "tauri-plugin-background-service": "^1.0.1"
   }
 }
