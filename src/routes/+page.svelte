@@ -1,6 +1,10 @@
 <script lang="ts">
   import "../app.css";
   import { Button } from "$lib/components/ui/button/index.js";
+  import { Spinner } from "$lib/components/ui/spinner/index.js";
+  import * as Dialog from "$lib/components/ui/dialog/index.js";
+  import * as InputOTP from "$lib/components/ui/input-otp/index.js";
+  import * as Table from "$lib/components/ui/table/index.js";
 
   import { invoke } from "@tauri-apps/api/core";
   import {
@@ -18,8 +22,9 @@
   interface Device {
     device_index: number,
     device_name: string,
-    device_id: string
-    device_ip: string
+    device_id: string,
+    device_ip: string,
+    device_requires_pin: boolean
   }
   
   interface DeviceListResponse {
@@ -133,20 +138,51 @@
 
 <div id="app" class="relative min-h-dvh">
     <h1>Connect to Airplay</h1>
-      <div class="flex flex-row w-full gap-2 justify-center my-5">
-        <Button type="button" onclick={getclients}>Refresh client list</Button>
-      </div>
-
-    {#each device_list as device}
-      <div class="flex flex-row w-full gap-3 justify-center my-2">
-        <div>{device.device_index}</div><div>|</div>
-        <div>{device.device_name}</div> <div>|</div>
-        <div>{device.device_id}</div> <div>|</div>
-        <div>{device.device_ip}</div> <div>|</div>
-        <Button type="button" onclick={() => requestPIN(device.device_ip)}>Request PIN</Button> <div>|</div>
-        <Button type="button" onclick={() => connectClientIndex(device.device_index)}>Connect</Button>
-      </div>
-    {/each}
+    <div class="flex flex-row w-full gap-2 justify-center my-5">
+      <Button type="button" onclick={getclients}>Refresh client list</Button>
+    </div>
+    <Table.Root>
+      <Table.Body>
+      
+        {#each device_list as device}
+          <Table.Row>
+            <Table.Cell>{device.device_index}</Table.Cell>
+            <Table.Cell>{device.device_name}</Table.Cell>
+            <Table.Cell>{device.device_id}</Table.Cell>
+            <Table.Cell>{device.device_ip}</Table.Cell>
+            <Table.Cell>{device.device_requires_pin}</Table.Cell>
+            <Table.Cell>
+              {#if device.device_requires_pin}
+                <Dialog.Root>
+                    <Dialog.Trigger type="button">Connect</Dialog.Trigger>
+                    <Dialog.Content class="sm:max-w-[425px]">
+                      <Dialog.Header />
+                      <div class="flex flex-col gap-3 items-center">
+                        <Button class="w-fit" type="button" onclick={() => getClientPin(device.device_index)}>Request PIN</Button>
+                        <InputOTP.Root maxlength={4} class="w-fit">
+                          {#snippet children({ cells })}
+                            <InputOTP.Group>
+                              {#each cells as cell (cell)}
+                                <InputOTP.Slot {cell} />
+                              {/each}
+                            </InputOTP.Group>
+                          {/snippet}
+                        </InputOTP.Root>
+                        <Button class="w-fit" type="button" onclick={() => connectClientIndexPin(device.device_index)}>Connect</Button>
+                      </div>
+                      <Dialog.Footer>
+                        <Dialog.Close type="button">Cancel</Dialog.Close>
+                      </Dialog.Footer>
+                    </Dialog.Content>
+                </Dialog.Root>
+              {:else}
+                <Button type="button" onclick={() => connectClientIndex(device.device_index)}>Connect</Button>
+              {/if}
+            </Table.Cell>
+          </Table.Row>
+        {/each}
+      </Table.Body>
+    </Table.Root>
     
     {#if err_msg}
       Error: {err_msg}

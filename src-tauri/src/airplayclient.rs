@@ -31,16 +31,18 @@ pub struct DeviceIDEntry {
     device_index: usize,
     device_name: String,
     device_id: String,
-    device_ip: Option<String>
+    device_ip: Option<String>,
+    device_requires_pin: bool
 }
 
 impl DeviceIDEntry {
-    fn new(device_index: usize,device_name: String,device_id: String,device_ip: Option<String>) -> Self {
+    fn new(device_index: usize,device_name: String,device_id: String,device_ip: Option<String>,device_requires_pin: bool) -> Self {
         Self {
             device_index: device_index,
             device_name: device_name,
             device_id: device_id,
-            device_ip: device_ip
+            device_ip: device_ip,
+            device_requires_pin: device_requires_pin
         }
     }
 }
@@ -57,7 +59,9 @@ fn device_to_device_id_entry((device_index,device): (usize, &Device)) -> DeviceI
         None => None,
         Some(i) => Some(i.to_string())
     };
-    DeviceIDEntry::new(device_index,device.name.clone(),device.id.to_mac_string(),address)
+    //for some reason this is completely wrong in the docs, the check should be for 0b100 because requires_pin is at bit 3
+    let device_requires_pin = device.status_flags & 0b100 != 0;
+    DeviceIDEntry::new(device_index,device.name.clone(),device.id.to_mac_string(),address,device_requires_pin)
 }
 
 fn err_to_client_result<'a>(err: airplay_client::Error) -> ResultTypes {
