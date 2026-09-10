@@ -26,7 +26,7 @@ serde_json = "1"
 tauri-plugin-notification = "2.4.0"
 tokio = "1.53.1"
 async-trait = "0.1.92"
-airplay-client = { git = "https://github.com/lmcgartland/airplay2-rs.git", rev = "a7f019f" }
+airplay-client = { git = "https://github.com/HoopyFreud/airplay2-rs-tauri.git", rev = "2ba3d9a" }
 strum_macros = "0.28"
 tauri-plugin-store = "2"
 tauri-plugin-http = "2"
