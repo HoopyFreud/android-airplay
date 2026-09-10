@@ -43,7 +43,7 @@ async fn connect_to_client_index_persisted_id(app: AppHandle, device_manager: St
 }
 
 #[tauri::command]
-async fn connect_to_client_index_pin(app: AppHandle, device_manager: State<'_, Mutex<DeviceManager>>,index: usize,pin: &str) -> Result<ResultTypes,ResultTypes> {
+async fn connect_to_client_index_pin(device_manager: State<'_, Mutex<DeviceManager>>,index: usize,pin: &str) -> Result<ResultTypes,ResultTypes> {
     let mut device_manager_state: tokio::sync::MutexGuard<DeviceManager> = device_manager.lock().await;
     device_manager_state.connect_to_device_by_index_with_pin(index,pin).await?;
     device_manager_state.get_connected_device()

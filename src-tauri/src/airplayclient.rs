@@ -1,6 +1,5 @@
 use std::time::Duration;
 use tauri_plugin_http::reqwest;
-use tauri_plugin_store::StoreExt;
 
 use serde::Serialize;
 use strum_macros::AsRefStr;
