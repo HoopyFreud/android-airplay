@@ -28,15 +28,15 @@ async fn connect_to_client_index(device_manager: State<'_, Mutex<DeviceManager>>
 #[tauri::command]
 async fn connect_to_client_index_persisted_id(app: AppHandle, device_manager: State<'_, Mutex<DeviceManager>>,index: usize) -> Result<ResultTypes,ResultTypes> {
     let Ok(store) = app.store("persisted_identities.json") else {
-        return Err(airplayclient::string_to_client_result("Could not load store"))
+        return Err(airplayclient::string_to_client_error("Could not load store"))
     };
     let mut device_manager_state: tokio::sync::MutexGuard<DeviceManager> = device_manager.lock().await;
     let key: &str = device_manager_state.get_connected_device_identity_key()?;
     let Some(persisted_id) = store.get(key) else {
-        return Err(airplayclient::string_to_client_result("Could not find persisted ID in store"))
+        return Err(airplayclient::string_to_client_error("Could not find persisted ID in store"))
     };
     let Ok(deser_persisted_id) = &PersistentIdentity::deserialize(persisted_id) else {
-        return Err(airplayclient::string_to_client_result("Could not deserialize persisted ID"))
+        return Err(airplayclient::string_to_client_error("Could not deserialize persisted ID"))
     };
     device_manager_state.connect_to_device_by_index_with_persisted_id(index,deser_persisted_id).await?;
     device_manager_state.get_connected_device()
@@ -52,7 +52,7 @@ async fn connect_to_client_index_pin(device_manager: State<'_, Mutex<DeviceManag
 #[tauri::command]
 async fn connect_to_client_index_pin_pairing(app: AppHandle, device_manager: State<'_, Mutex<DeviceManager>>,index: usize,pin: &str) -> Result<ResultTypes,ResultTypes> {
     let Ok(store) = app.store("persisted_identities.json") else {
-        return Err(airplayclient::string_to_client_result("Could not load store"))
+        return Err(airplayclient::string_to_client_error("Could not load store"))
     };
     let mut device_manager_state: tokio::sync::MutexGuard<DeviceManager> = device_manager.lock().await;
     let persisted_identity = device_manager_state.connect_to_device_by_index_with_pin_pairing(index,pin).await?;// -- need to write logic to distinguish these cases

@@ -17,26 +17,26 @@ pub struct DeviceManager {
 impl DeviceManager {
     //functions that compute
     pub async fn discover_devices(&mut self,timeout: u64) -> Result<(),ResultTypes> {
-        self.device_list = self.airplay_client.discover(Duration::from_secs(timeout)).await.map_err(airplay_err_to_client_result)?;
+        self.device_list = self.airplay_client.discover(Duration::from_secs(timeout)).await.map_err(airplay_err_to_client_error)?;
         Ok(())
     }
     pub async fn connect_to_device_by_index(&mut self,index:usize) -> Result<(),ResultTypes> {
-        self.airplay_client.connect(&self.device_list[index]).await.map_err(airplay_err_to_client_result)?;
+        self.airplay_client.connect(&self.device_list[index]).await.map_err(airplay_err_to_client_error)?;
         self.connected_device_index = Some(index);
         Ok(())
     }
     pub async fn connect_to_device_by_index_with_persisted_id(&mut self,index:usize,persisted_id: &PersistentIdentity) -> Result<(),ResultTypes> {
-        self.airplay_client.connect_with_persistent_identity(&self.device_list[index],persisted_id).await.map_err(airplay_err_to_client_result)?;
+        self.airplay_client.connect_with_persistent_identity(&self.device_list[index],persisted_id).await.map_err(airplay_err_to_client_error)?;
         self.connected_device_index = Some(index);
         Ok(())
     }
     pub async fn connect_to_device_by_index_with_pin(&mut self,index:usize,pin:&str) -> Result<(),ResultTypes> {
-        self.airplay_client.connect_with_pin(&self.device_list[index],pin).await.map_err(airplay_err_to_client_result)?;
+        self.airplay_client.connect_with_pin(&self.device_list[index],pin).await.map_err(airplay_err_to_client_error)?;
         self.connected_device_index = Some(index);
         Ok(())
     }
     pub async fn connect_to_device_by_index_with_pin_pairing(&mut self,index:usize,pin:&str) -> Result<PersistentIdentity,ResultTypes> {
-        let persisted_identity = self.airplay_client.connect_with_pin_pairing(&self.device_list[index],pin).await.map_err(airplay_err_to_client_result)?;
+        let persisted_identity = self.airplay_client.connect_with_pin_pairing(&self.device_list[index],pin).await.map_err(airplay_err_to_client_error)?;
         self.connected_device_index = Some(index);
         Ok(persisted_identity)
     }
@@ -45,8 +45,8 @@ impl DeviceManager {
             return Err(ResultTypes::Error("Could not find device address".to_string()))
         };
         let client: reqwest::Client = reqwest::Client::new();
-        let response: reqwest::Response = client.post(format!("http://{}/pair-pin-start",address)).send().await.map_err(http_err_to_client_result)?;
-        let response_data: String = response.text().await.map_err(http_err_to_client_result)?;
+        let response: reqwest::Response = client.post(format!("http://{}/pair-pin-start",address)).send().await.map_err(http_err_to_client_error)?;
+        let response_data: String = response.text().await.map_err(http_err_to_client_error)?;
         Ok(ResultTypes::HttpResponse(response_data))
     }
 
@@ -110,14 +110,14 @@ fn device_to_device_id_entry((device_index,device): (usize, &Device)) -> DeviceI
     DeviceIDEntry::new(device_index,device.name.clone(),device.pairing_identity.clone(),device_requires_pin)
 }
 
-fn airplay_err_to_client_result(err: airplay_client::Error) -> ResultTypes {
+fn airplay_err_to_client_error(err: airplay_client::Error) -> ResultTypes {
     ResultTypes::Error(err.to_string())
 }
 
-fn http_err_to_client_result(err: tauri_plugin_http::reqwest::Error) -> ResultTypes {
+fn http_err_to_client_error(err: tauri_plugin_http::reqwest::Error) -> ResultTypes {
     ResultTypes::Error(err.to_string())
 }
 
-pub fn string_to_client_result(str: &str) -> ResultTypes {
+pub fn string_to_client_error(str: &str) -> ResultTypes {
     ResultTypes::Error(str.to_string())
 }
